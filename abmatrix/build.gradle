@@ -1,0 +1,9 @@
+
+description 'ABMatrix JSON-RPC API'
+
+dependencies {
+    compile project(':core'),
+            "com.alibaba:fastjson:1.2.55"
+    testCompile project(path: ':core', configuration: 'archives'),
+            "nl.jqno.equalsverifier:equalsverifier:$equalsverifierVersion"
+}
