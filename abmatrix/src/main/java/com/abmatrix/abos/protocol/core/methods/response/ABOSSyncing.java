@@ -1,4 +1,4 @@
-package com.abmatrix.abos.protocol.methods.response;
+package com.abmatrix.abos.protocol.core.methods.response;
 
 import com.cryptape.cita.protocol.core.Response;
 

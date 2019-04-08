@@ -1,12 +1,13 @@
-package com.abmatrix.abos.protocol.methods.response;
+package com.abmatrix.abos.protocol.core.methods.response;
 
 import com.cryptape.cita.protocol.core.Response;
 import com.cryptape.cita.utils.Numeric;
 
 import java.math.BigInteger;
 
-public class ABOSBlockNumber extends Response<String> {
-    public BigInteger getBlockNumber() {
+
+public class ABOSEstimateGas extends Response<String> {
+    public BigInteger getEstimateGas() {
         return Numeric.decodeQuantity(getResult());
     }
 }

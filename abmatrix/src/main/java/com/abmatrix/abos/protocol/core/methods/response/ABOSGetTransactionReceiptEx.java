@@ -1,10 +1,10 @@
-package com.abmatrix.abos.protocol.methods.response;
+package com.abmatrix.abos.protocol.core.methods.response;
 
 import com.cryptape.cita.protocol.core.Response;
 
 import java.util.List;
 
-public class ABOSGetTransactionReceipt extends Response<ABOSGetTransactionReceipt> {
+public class ABOSGetTransactionReceiptEx extends Response<ABOSGetTransactionReceiptEx> {
 
     private String transactionHash;
     private String transactionIndex;
@@ -17,6 +17,15 @@ public class ABOSGetTransactionReceipt extends Response<ABOSGetTransactionReceip
     private String root;
     private String logsBloom;
     private String errorMessage;
+    private String value;
+    private String from;
+    private String to;
+    private String fromBalance;
+    private String toBalance;
+    private String data;
+    private String quotaLimit;
+    private String quotaPrice;
+    private String quotaCost;
 
     public String getTransactionHash() {
         return transactionHash;
@@ -58,14 +67,6 @@ public class ABOSGetTransactionReceipt extends Response<ABOSGetTransactionReceip
         this.cumulativeQuotaUsed = cumulativeQuotaUsed;
     }
 
-    public String getQuotaUsed() {
-        return quotaUsed;
-    }
-
-    public void setQuotaUsed(String quotaUsed) {
-        this.quotaUsed = quotaUsed;
-    }
-
     public String getContractAddress() {
         return contractAddress;
     }
@@ -98,12 +99,92 @@ public class ABOSGetTransactionReceipt extends Response<ABOSGetTransactionReceip
         this.errorMessage = errorMessage;
     }
 
+    public String getFrom() {
+        return from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
+    }
+
+    public String getTo() {
+        return to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
     public List<LogsBean> getLogs() {
         return logs;
     }
 
     public void setLogs(List<LogsBean> logs) {
         this.logs = logs;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getFromBalance() {
+        return fromBalance;
+    }
+
+    public void setFromBalance(String fromBalance) {
+        this.fromBalance = fromBalance;
+    }
+
+    public String getToBalance() {
+        return toBalance;
+    }
+
+    public void setToBalance(String toBalance) {
+        this.toBalance = toBalance;
+    }
+
+    public String getQuotaUsed() {
+        return quotaUsed;
+    }
+
+    public void setQuotaUsed(String quotaUsed) {
+        this.quotaUsed = quotaUsed;
+    }
+
+    public String getQuotaLimit() {
+        return quotaLimit;
+    }
+
+    public void setQuotaLimit(String quotaLimit) {
+        this.quotaLimit = quotaLimit;
+    }
+
+    public String getQuotaPrice() {
+        return quotaPrice;
+    }
+
+    public void setQuotaPrice(String quotaPrice) {
+        this.quotaPrice = quotaPrice;
+    }
+
+    public String getQuotaCost() {
+        return quotaCost;
+    }
+
+    public void setQuotaCost(String quotaCost) {
+        this.quotaCost = quotaCost;
     }
 
     public static class LogsBean {
@@ -219,7 +300,16 @@ public class ABOSGetTransactionReceipt extends Response<ABOSGetTransactionReceip
                 ", root='" + root + '\'' +
                 ", logsBloom='" + logsBloom + '\'' +
                 ", errorMessage='" + errorMessage + '\'' +
+                ", from='" + from + '\'' +
+                ", to='" + to + '\'' +
+                ", value='" + value + '\'' +
                 ", logs=" + logs +
+                ", data='" + data + '\'' +
+                ", fromBalance='" + fromBalance + '\'' +
+                ", toBalance='" + toBalance + '\'' +
+                ", quotaLimit='" + quotaLimit + '\'' +
+                ", quotaPrice='" + quotaPrice + '\'' +
+                ", quotaCost='" + quotaCost + '\'' +
                 '}';
     }
 }
