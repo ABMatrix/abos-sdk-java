@@ -27,15 +27,6 @@ public class JsonRpc2_0ABOSj extends JsonRpc2_0CITAj implements ABOSj {
     }
 
     @Override
-    public Request<?, ABOSGetPeers> getPeers() {
-        return new Request<>(
-                "getPeers",
-                Collections.<String>emptyList(),
-                CITAjService,
-                ABOSGetPeers.class);
-    }
-
-    @Override
     public Request<?, ABOSEstimateGas> estimateGas(String from, String to, String value, String data, String blockNumber) {
 
         JSONObject jsonObject = new JSONObject();

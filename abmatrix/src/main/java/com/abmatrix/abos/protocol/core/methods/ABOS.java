@@ -14,8 +14,6 @@ import java.util.concurrent.ScheduledExecutorService;
  */
 public interface ABOS {
 
-    Request<?, ABOSGetPeers> getPeers();
-
     Request<?, ABOSEstimateGas> estimateGas(String from, String to, String value, String data, String blockNumber);
 
     Request<?, ABOSGetGasPrice> getGasPrice();
