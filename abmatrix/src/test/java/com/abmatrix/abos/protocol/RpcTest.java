@@ -6,16 +6,9 @@ import com.cryptape.cita.protocol.http.HttpService;
 
 public class RpcTest {
 
-    private CITAjService service = new HttpService("http://47.99.236.226:1338");
+    private CITAjService service = new HttpService("http://47.99.236.158:1339");
 
     private ABOSj abos = ABOSj.build(service);
-
-    @Test
-    public void testGetPeers() throws Exception {
-
-        System.out.println(abos.getPeers().send().getResult().getPeers());
-
-    }
 
     @Test
     public void testEstimateGas() throws Exception {
