@@ -29,16 +29,20 @@ maven
 <dependency>
   <groupId>com.cryptape.cita</groupId>
   <artifactId>core</artifactId>
-  <version>0.22.3</version>
+  <version>0.23.0</version>
 </dependency>
 ```
 Gradle
 ```
-compile 'com.cryptape.cita:core:0.22.3'
+compile 'com.cryptape.cita:core:0.23.0'
 ```
 
 Install manually
 If you want to generate the jar and import manually.
+
+> Because uploading jar package to maven server and packing jar package locally through `shadowJar` command have conflicts, you 
+> should add `apply plugin: 'com.github.johnrengelman.shadow'` of `console/bulid.gradle` when packing locally.(It's annotated by default)
+
 ```
 git clone https://github.com/cryptape/cita-sdk-java.git
 gradle shadowJar
@@ -166,16 +170,20 @@ Gradle 4.3
 <dependency>
   <groupId>com.cryptape.cita</groupId>
   <artifactId>core</artifactId>
-  <version>0.22.3</version>
+  <version>0.23.0</version>
 </dependency>
 ```
 Gradle
 ```
-compile 'com.cryptape.cita:core:0.22.3'
+compile 'com.cryptape.cita:core:0.23.0'
 ```
 
 手动安装  
 如果你想使用最新的 CITA，编译 CITA 生成 jar 包，并手动引入。
+
+> 由于上传 jar 包至 maven server 和本地通过 shadow 命令打包存在冲突，所以当你要在本地通过 shadowJar 命令打包时，
+> 你需要添加和保留 `console/bulid.gradle` 文件下第一行 `apply plugin: 'com.github.johnrengelman.shadow'`（改行默认是被注释的）。
+
 ```
 git clone https://github.com/cryptape/cita-sdk-java.git
 gradle shadowJar
