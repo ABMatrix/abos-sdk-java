@@ -1,29 +1,13 @@
+apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'maven'
 
 description 'ABMatrix JSON-RPC API'
+
+version '1.0.2'
 
 dependencies {
     compile project(':core'),
             "com.alibaba:fastjson:1.2.55"
     testCompile project(path: ':core', configuration: 'archives'),
             "nl.jqno.equalsverifier:equalsverifier:$equalsverifierVersion"
-}
-
-task createPom {
-    pom {
-        project {
-            groupId 'sg.test.spring.web.guide'
-            artifactId 'sg-web-initial'
-            version '1.0.0-SNAPSHOT'
-
-            inceptionYear '2008'
-            licenses {
-                license {
-                    name 'The Apache Software License, Version 2.0'
-                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    distribution 'repo'
-                }
-            }
-        }
-    }.writeTo("pom.xml")
 }
