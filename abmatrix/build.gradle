@@ -3,7 +3,7 @@ apply plugin: 'maven'
 
 description 'ABMatrix JSON-RPC API'
 
-version '1.0.2'
+version '1.0.3'
 
 dependencies {
     compile project(':core'),

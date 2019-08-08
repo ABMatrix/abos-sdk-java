@@ -1,8 +1,5 @@
 package com.cryptape.cita.utils;
 
-import java.math.BigInteger;
-import java.security.SignatureException;
-
 import com.cryptape.cita.crypto.Keys;
 import com.cryptape.cita.crypto.Sign;
 import com.cryptape.cita.protobuf.Blockchain;
@@ -10,6 +7,9 @@ import com.cryptape.cita.protobuf.ConvertStrByte;
 import com.cryptape.cita.protocol.core.methods.request.Transaction;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
+
+import java.math.BigInteger;
+import java.security.SignatureException;
 
 public class TransactionUtil {
 
@@ -91,7 +91,7 @@ public class TransactionUtil {
     }
 
     public static Transaction
-            decodeContent(String content) throws InvalidProtocolBufferException {
+    decodeContent(String content) throws InvalidProtocolBufferException {
 
         Blockchain.UnverifiedTransaction unverifiedTx
                 = Blockchain.UnverifiedTransaction.parseFrom(
@@ -105,6 +105,9 @@ public class TransactionUtil {
         long validUntilBlock = blockChainTx.getValidUntilBlock();
         String data = bytesToHexString(blockChainTx.getData());
         String value = bytesToHexString(blockChainTx.getValue());
+        if (!value.startsWith("0x")) {
+            value = "0x" + value;
+        }
 
         String to = null;
         BigInteger chainId = null;
